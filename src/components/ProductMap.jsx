@@ -1,7 +1,7 @@
-import UserCard from "./UserCard";
+import ProductCard from "./ProductCard";
 
-function UserMap({
-  users,
+function ProductMap({
+  products,
   handleEdit,
   handleDelete,
 }) {
@@ -11,18 +11,18 @@ function UserMap({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
-          {users.length > 0 ? (
-            users.map((user) => (
-              <UserCard
-                key={user.id}
-                user={user}
+          {products.length > 0 ? (
+            products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
                 handleEdit={handleEdit}
                 handleDelete={handleDelete}
               />
             ))
           ) : (
             <div className="col-span-full text-center text-white text-2xl font-semibold">
-              User topilmadi 😔
+              Mahsulot topilmadi 😔
             </div>
           )}
 
@@ -33,4 +33,4 @@ function UserMap({
   );
 }
 
-export default UserMap;
+export default ProductMap;
