@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ setShowForm }) {
   const activeStyle = ({ isActive }) =>
     isActive
       ? "text-yellow-300 border-b-2 border-yellow-300 pb-1"
@@ -10,7 +10,7 @@ function Navbar() {
     <nav className="bg-green-900 shadow-lg">
       <div className="container mx-auto px-6 py-5 flex items-center justify-between">
 
-        <h1 className="text-4xl font-bold text-white cursor-pointer">
+        <h1 className="text-4xl font-bold text-white">
           Users
         </h1>
 
@@ -26,6 +26,15 @@ function Navbar() {
             <NavLink to="/products" className={activeStyle}>
               Products
             </NavLink>
+          </li>
+
+          <li>
+            <button
+              onClick={() => setShowForm(true)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg"
+            >
+              Create
+            </button>
           </li>
 
         </ul>
